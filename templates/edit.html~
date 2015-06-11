@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Edit profile{% endblock %}
+{% block body %}
+<p>Name: {{ username }}</p>
+<form method="post" action="/edit">
+  <label>Password: <input name="password" type="password" value="{{ password }}"></label>
+  <br>
+  <label>Introduction: <input name="introduction" value="{{ introduction }}"></label>
+  <br>
+  <label for="bookdate">Age: </label>
+  <input name="age" type="date" id="bookdate" value="{{age}}">
+  <br>
+  <input name="csrf_token" type="hidden" value="{{ csrf_token }}">
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}
